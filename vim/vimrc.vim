@@ -27,7 +27,10 @@ Plugin 'tpope/vim-fugitive'
 "vim airline themes 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+"autopep8 formating
 Plugin 'tell-k/vim-autopep8' 
+"git diff in gutter
+Plugin 'airblade/vim-gitgutter'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
