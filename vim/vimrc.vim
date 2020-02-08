@@ -27,6 +27,7 @@ Plugin 'tpope/vim-fugitive'
 "vim airline themes 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tell-k/vim-autopep8' 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -101,3 +102,9 @@ set clipboard=unnamed
 "NerdTree mapp
 map <F3> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
+
+
+"Autopep8
+autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
+let g:autopep8_disable_show_diff=1
+let g:autopep8_on_save = 1
