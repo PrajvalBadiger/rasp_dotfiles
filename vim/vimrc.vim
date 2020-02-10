@@ -31,12 +31,15 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tell-k/vim-autopep8' 
 "git diff in gutter
 Plugin 'airblade/vim-gitgutter'
+"vim-tmux-integration
+Plugin 'christoomey/vim-tmux-navigator'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 set nu 
 set rnu
+set encoding=UTF-8
 
 "Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
@@ -63,10 +66,13 @@ ca w!! w !sudo tee "%"
 "bind move the windows around
 map <leader>s <c-w>s
 map <leader>" <c-w>v
-map <leader>h <c-w>h
-map <leader>j <c-w>j
-map <leader>l <c-w>l
-map <leader>k <c-w>k
+"vim-tmux-integrated navigation between panes
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
 "tab navigation mappings
 map <leader>t :tabnew<CR>
@@ -99,13 +105,16 @@ set ls=2
 "incremental scearch and highlighted search result
 set incsearch
 set hlsearch
+set ignorecase
+set smartcase
 set clipboard=unnamed
 
+" Unbind some useless default key bindings
+nmap Q <Nop>
 
-"NerdTree mapp
+"NerdTree map
 map <F3> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
-
 
 "Autopep8
 autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
