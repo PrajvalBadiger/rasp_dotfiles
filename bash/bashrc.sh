@@ -1,5 +1,5 @@
 export PATH=/home/pi/.local/bin/autopep8:$PATH
-source ~/.bash_prompt
+source ~/rasp_dotfiles/bash/bash_prompt.sh
 set -o vi
 
 # don't put duplicate lines or lines starting with space in the history.
