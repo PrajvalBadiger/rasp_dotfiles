@@ -1,5 +1,6 @@
 export PATH=/home/pi/.local/bin/autopep8:$PATH
 source ~/rasp_dotfiles/bash/bash_prompt.sh
+source ~/rasp_dotfiles/bash/bash_aliases.sh
 set -o vi
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -18,10 +19,3 @@ HISTFILESIZE=2000
 # should be on the output of commands, not on the prompt
 force_color_prompt=yes
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
